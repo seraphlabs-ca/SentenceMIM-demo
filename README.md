@@ -6,9 +6,18 @@ Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
 # Experiments
 
-Below are the commands to train and test MIM, VAE, and AE with shared architecture.
+Below are the commands to train and test MIM, VAE, and AE with shared architecture over Penn Treebank (PTB) dataset.
 
-## Training 
+## Dataset
+
+|              | Sentences |        |       |        |                  |
+|--------------|:---------:|:------:|:-----:|:------:|:----------------:|
+|              |   Train   | Valid. |  Test | Vocab. |     #w (max)     |
+| PTB          |    3370   |  3761  | 42068 |  10000 | 21 $\pm$ 10 (82) |
+
+
+
+## Training Commands
 
 ```
 hidden_size=512
@@ -66,7 +75,7 @@ for latent_size in 16 128 512; do
 done
 ```
 
-## Testing 
+## Testing Commands
 
 NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
 
@@ -82,8 +91,10 @@ NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
     --test_bleu \
     --test_sample \
     --test_interp \
-    data/torch-generated/exp/<EXPERIMENT PATH>
+    data/torch-generated/exp/*
 ```
+
+All results will be store in the corresponding results path in ```best-test-1-marginal0-mcmc0.txt``` (name corresponds the command line arguments of test.py script).
 
 # Citation
 
