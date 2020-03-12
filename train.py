@@ -107,17 +107,12 @@ def main(args):
                 scale=torch.exp(0.5 * logv),
             )
 
-            if args.mim_type == "marginal":
-                KL_loss = -torch.sum(
-                    q_z_given_x.log_prob(z).sum(-1)
-                )
-            elif args.mim_type == "normal":
-                p_z = model.get_prior()
+            p_z = model.get_prior()
 
-                KL_loss = -0.5 * torch.sum(
-                    q_z_given_x.log_prob(z).sum(-1) +
-                    p_z.log_prob(z).sum(-1)
-                )
+            KL_loss = -0.5 * torch.sum(
+                q_z_given_x.log_prob(z).sum(-1) +
+                p_z.log_prob(z).sum(-1)
+            )
 
             KL_weight = 1.0
         else:
@@ -284,7 +279,6 @@ if __name__ == '__main__':
     parser.add_argument('-eb', '--embedding_size', type=int, default=300)
     parser.add_argument('-rnn', '--rnn_type', type=str, default='gru')
     parser.add_argument('-prior', '--prior_type', type=str, default='normal')
-    parser.add_argument('--mim_type', type=str, default='normal')
     parser.add_argument('-hs', '--hidden_size', type=int, default=256)
     parser.add_argument('-nl', '--num_layers', type=int, default=1)
     parser.add_argument('-ls', '--latent_size', type=int, default=16)
@@ -312,6 +306,5 @@ if __name__ == '__main__':
     assert args.rnn_type in ['rnn', 'lstm', 'gru']
     assert args.anneal_function in ['logistic', 'linear']
     assert 0 <= args.word_dropout <= 1
-    assert args.mim_type in ['normal', 'marginal']
 
     main(args)

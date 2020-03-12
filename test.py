@@ -61,19 +61,6 @@ def main(checkpoint_fname, args):
     elif args.temperature < 0.0:
         compute_temperature = True
 
-    # test all VAE/MIM as AE
-    if args.test_as_marginal:
-        if model.args.mim_type == "marginal":
-            print("Skipping marginal")
-            return
-        else:
-            model.args.mim_type = "marginal"
-    else:
-        # enforce marginal if given
-        if args.mim_type:
-            assert args.mim_type in ['normal', 'marginal']
-            model.args.mim_type = args.mim_type
-
     model.eval()
 
     base_fname = "{base_fname}-{split}-{seed}-marginal{marginal}-mcmc{mcmc}".format(
@@ -191,11 +178,7 @@ def main(checkpoint_fname, args):
             H_p_x_given_z = nll(log_p_x_given_z, target).view((batch_size, -1)).sum(-1)
 
             if model.args.mim:
-                if model.args.mim_type == "marginal":
-                    log_p_z = log_q_z_given_x - torch.log(N)
-                elif model.args.mim_type == "normal":
-                    p_z = model.get_prior()
-                    log_p_z = p_z.log_prob(z)
+                log_p_z = log_q_z_given_x - torch.log(N)
             else:
                 p_z = model.get_prior()
                 log_p_z = p_z.log_prob(z)
@@ -405,10 +388,6 @@ def main(checkpoint_fname, args):
 
         for i in range(args.batch_size):
             if (data["length"][i] >= args.min_sample_length) and (data["length"][i] <= args.max_sample_length):
-                if args.no_header_sample and (dataset_name in ["wiki103", "wiki2"]):
-                    # skip headers
-                    if ((data["input"][i] == w2i["="]).sum() >= 2):
-                        continue
                 if args.no_unk_sample:
                     if ((data["input"][i] == dataset.unk_idx).sum() >= 1):
                         continue
@@ -496,9 +475,7 @@ if __name__ == '__main__':
     parser.add_argument('-te', '--test_epochs', type=int, default=1)
     parser.add_argument('-maxsl', '--max_sample_length', type=int, default=60)
     parser.add_argument('-minsl', '--min_sample_length', type=int, default=2)
-    parser.add_argument('-nohs', '--no_header_sample', action='store_true')
     parser.add_argument('--no_unk_sample', action='store_true')
-    parser.add_argument('--mim_type', type=str, default="")
     parser.add_argument('--test_as_marginal', action='store_true')
     parser.add_argument('--mcmc', type=int, default=0)
     parser.add_argument('-sm', '--sample_mode', type=str, default="")

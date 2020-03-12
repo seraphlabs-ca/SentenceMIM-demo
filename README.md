@@ -1,8 +1,8 @@
 # SentenceMIM-demo
 
-This repo contains code to reproduce some of the results presented in the paper "SentenceMIM: A Latent Variable Language Model"
+This repo contains code to reproduce some of the results presented in the paper ["SentenceMIM: A Latent Variable Language Model"](https://arxiv.org/abs/2003.02645)
 
-Code is based on: ```https://github.com/timbmg/Sentence-VAE```
+Code is based on: ```https://github.com/timbmg/Sentence-VAE```.
 
 # Experiments
 
@@ -14,25 +14,21 @@ embedding_size=300
 dataset=ptb
 for latent_size in 16 128 512; do
     # MIM
-    for mim_type in normal; do
-        ./train.py  \
-            --save_model_path exp \
-            --test \
-            --dataset ${dataset}  \
-            --embedding_dropout 0.5 \
-            --epochs 200 \
-            --prior_type normal \
-            --max_sequence_length 100 \
-            --batch_size 20 \
-            --embedding_size ${embedding_size} \
-            --hidden_size ${hidden_size} \
-            --latent_size ${latent_size} \
-            --optim adam \
-            -lr 0.001 \
-            -x0 0 \
-            --mim_type ${mim_type} \
-            --mim
-        done
+    ./train.py  \
+        --save_model_path exp \
+        --test \
+        --dataset ${dataset}  \
+        --embedding_dropout 0.5 \
+        --epochs 200 \
+        --max_sequence_length 100 \
+        --batch_size 20 \
+        --embedding_size ${embedding_size} \
+        --hidden_size ${hidden_size} \
+        --latent_size ${latent_size} \
+        --optim adam \
+        -lr 0.001 \
+        -x0 0 \
+        --mim
     
     # VAE
     for x0 in 0 10000; do
@@ -42,7 +38,6 @@ for latent_size in 16 128 512; do
             --dataset ${dataset}  \
             --embedding_dropout 0.5 \
             --epochs 200 \
-            --prior_type normal \
             --max_sequence_length 100 \
             --batch_size 20 \
             --embedding_size ${embedding_size} \
@@ -60,7 +55,6 @@ for latent_size in 16 128 512; do
         --dataset ${dataset}  \
         --embedding_dropout 0.5 \
         --epochs 200 \
-        --prior_type normal \
         --max_sequence_length 100 \
         --batch_size 20 \
         --embedding_size ${embedding_size} \
@@ -76,12 +70,12 @@ done
 ## Testing 
 
 ```
-./test.py --max_sequence_length 100 -nohs --test_epochs 10 --seed 1 -maxsl 20 --batch_size 20 --temperature 0.1 --mcmc  0 --test  --split test --plot_model -1  bin/ptb_2019-Nov-26_18-45-49_mim
+./test.py --max_sequence_length 100 --test_epochs 1 --seed 1 -maxsl 20 --batch_size 20 --temperature 1.0 --test --split test  bin/ptb_2019-Nov-26_18-45-49_mim
 ```
 
 # Citation
 
-Please cite using the following bibtext entry
+Please cite using the following bibtex entry
 
 ```
 @ARTICLE{2020arXiv200302645L,
