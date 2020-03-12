@@ -24,7 +24,7 @@ Below are the commands to train and test MIM, VAE, and AE with shared architectu
 |              | Sentences |        |       |        |                  |
 |--------------|:---------:|:------:|:-----:|:------:|:----------------:|
 |              |   Train   | Valid. |  Test | Vocab. |     #w (max)     |
-| PTB          |    3370   |  3761  | 42068 |  10000 | 21 $\pm$ 10 (82) |
+| PTB          |    3370   |  3761  | 42068 |  10000 | 21 +/- 10 (82) |
 
 
 
