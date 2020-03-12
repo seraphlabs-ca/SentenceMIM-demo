@@ -1,6 +1,6 @@
 # SentenceMIM-demo
 
-This repo contains code to reproduce some of the results presented in the paper ["SentenceMIM: A Latent Variable Language Model"](https://arxiv.org/abs/2003.02645)
+This repo contains code to reproduce some of the results presented in the paper ["SentenceMIM: A Latent Variable Language Model"](https://arxiv.org/abs/2003.02645).
 
 Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
