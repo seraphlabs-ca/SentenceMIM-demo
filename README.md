@@ -75,7 +75,7 @@ NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
     --max_sequence_length 100 \
     --test_epochs 1 \
     --seed 1 \
-    -max_sample_length 20 \
+    --max_sample_length 20 \
     --batch_size 20 \
     --temperature 1.0 \
     --test \
