@@ -18,6 +18,9 @@ import auxiliary as aux
 
 
 def main(args):
+    # set random seed
+    aux.reset_seed(args.seed)
+
     splits = ['train', 'valid'] + (['test'] if args.test else [])
 
     datasets = OrderedDict()
@@ -260,6 +263,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
 
+    parser.add_argument('--seed', type=int, default=1)
     parser.add_argument('--data_dir', type=str, default='data/datasets')
     parser.add_argument('--dataset', type=str, default='ptb')
     # number of samples

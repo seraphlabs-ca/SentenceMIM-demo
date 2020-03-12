@@ -26,6 +26,7 @@ dataset=ptb
 for latent_size in 16 128 512; do
     # MIM
     ./train.py  \
+        --seed 1 \
         --test \
         --dataset ${dataset}  \
         --embedding_dropout 0.5 \
@@ -43,6 +44,7 @@ for latent_size in 16 128 512; do
     # VAE
     for x0 in 0 10000; do
         ./train.py  \
+            --seed 1 \
             --test \
             --dataset ${dataset}  \
             --embedding_dropout 0.5 \
@@ -59,6 +61,7 @@ for latent_size in 16 128 512; do
 
     # AE
     ./train.py  \
+        --seed 1 \
         --test \
         --dataset ${dataset}  \
         --embedding_dropout 0.5 \
