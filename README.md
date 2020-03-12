@@ -71,7 +71,19 @@ done
 NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
 
 ```
-./test.py --max_sequence_length 100 --test_epochs 1 --seed 1 -maxsl 20 --batch_size 20 --temperature 1.0 --test --split test data/torch-generated/exp/<EXPERIMENT PATH>
+./test.py \
+    --max_sequence_length 100 \
+    --test_epochs 1 \
+    --seed 1 \
+    -max_sample_length 20 \
+    --batch_size 20 \
+    --temperature 1.0 \
+    --test \
+    --split test \
+    --test_bleu \
+    --test_sample \
+    --test_interp \
+    data/torch-generated/exp/<EXPERIMENT PATH>
 ```
 
 # Citation
