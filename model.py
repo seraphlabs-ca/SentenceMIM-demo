@@ -124,7 +124,7 @@ class SentenceMIM(nn.Module):
         input_embedding = self.embedding(rev_input_sequence)
 
         packed_input = rnn_utils.pack_padded_sequence(
-            input_embedding, sorted_lengths.data.cpu().tolist(), batch_first=True)
+            input_embedding, sorted_lengths.data.cpu(), batch_first=True)
 
         # encoder forward pass
         if self.rnn_type == "lstm":
@@ -173,7 +173,7 @@ class SentenceMIM(nn.Module):
             dim=-1)
 
         packed_input = rnn_utils.pack_padded_sequence(
-            input_embedding, sorted_lengths.data.cpu().tolist(), batch_first=True)
+            input_embedding, sorted_lengths.data.cpu(), batch_first=True)
 
         # decoder forward pass
         if self.rnn_type == "lstm":
@@ -225,7 +225,7 @@ class SentenceMIM(nn.Module):
         input_embedding = self.embedding(rev_input_sequence)
 
         packed_input = rnn_utils.pack_padded_sequence(
-            input_embedding, sorted_lengths.data.cpu().tolist(), batch_first=True)
+            input_embedding, sorted_lengths.data.cpu(), batch_first=True)
 
         # encoder forward pass
         if self.rnn_type == "lstm":
