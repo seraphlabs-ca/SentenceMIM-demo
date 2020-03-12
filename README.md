@@ -6,6 +6,8 @@ Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
 # Experiments
 
+Below are the commands to train and test MIM, VAE, and AE with shared architecture.
+
 ## Training 
 
 ```
@@ -65,6 +67,8 @@ done
 ```
 
 ## Testing 
+
+NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
 
 ```
 ./test.py --max_sequence_length 100 --test_epochs 1 --seed 1 -maxsl 20 --batch_size 20 --temperature 1.0 --test --split test data/torch-generated/exp/<EXPERIMENT PATH>

@@ -463,7 +463,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-bs', '--batch_size', type=int, default=-1)
     parser.add_argument('-n', '--num_samples', type=int, default=10)
-    parser.add_argument('-dd', '--data_dir', type=str, default='data')
+    parser.add_argument('-dd', '--data_dir', type=str, default='data/datasets')
     parser.add_argument('--seed', type=int, default=1)
 
     parser.add_argument('-ms', '--max_sequence_length', type=int, default=-1)
