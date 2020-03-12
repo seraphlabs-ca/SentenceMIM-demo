@@ -123,8 +123,11 @@ class SentenceMIM(nn.Module):
         # ENCODER
         input_embedding = self.embedding(rev_input_sequence)
 
+        torch.set_default_tensor_type('torch.FloatTensor')
         packed_input = rnn_utils.pack_padded_sequence(
             input_embedding, sorted_lengths.data.cpu(), batch_first=True)
+        if torch.cuda.is_available():
+            torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
         # encoder forward pass
         if self.rnn_type == "lstm":
@@ -172,8 +175,11 @@ class SentenceMIM(nn.Module):
         ],
             dim=-1)
 
+        torch.set_default_tensor_type('torch.FloatTensor')
         packed_input = rnn_utils.pack_padded_sequence(
             input_embedding, sorted_lengths.data.cpu(), batch_first=True)
+        if torch.cuda.is_available():
+            torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
         # decoder forward pass
         if self.rnn_type == "lstm":
@@ -224,8 +230,11 @@ class SentenceMIM(nn.Module):
         # ENCODER
         input_embedding = self.embedding(rev_input_sequence)
 
+        torch.set_default_tensor_type('torch.FloatTensor')
         packed_input = rnn_utils.pack_padded_sequence(
             input_embedding, sorted_lengths.data.cpu(), batch_first=True)
+        if torch.cuda.is_available():
+            torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
         # encoder forward pass
         if self.rnn_type == "lstm":
