@@ -296,7 +296,7 @@ if __name__ == '__main__':
     parser.add_argument('-x0', '--x0', type=int, default=2500)
 
     parser.add_argument('-v', '--print_every', type=int, default=50)
-    parser.add_argument('-bin', '--save_model_path', type=str, default='data/torch-generated/bin')
+    parser.add_argument('-bin', '--save_model_path', type=str, default='data/torch-generated/exp')
 
     args = parser.parse_args()
 

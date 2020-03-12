@@ -2,7 +2,7 @@
 
 This repo contains code to reproduce some of the results presented in the paper ["SentenceMIM: A Latent Variable Language Model"](https://arxiv.org/abs/2003.02645)
 
-Code is based on: ```https://github.com/timbmg/Sentence-VAE```.
+Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
 # Experiments
 
@@ -15,7 +15,6 @@ dataset=ptb
 for latent_size in 16 128 512; do
     # MIM
     ./train.py  \
-        --save_model_path exp \
         --test \
         --dataset ${dataset}  \
         --embedding_dropout 0.5 \
@@ -33,7 +32,6 @@ for latent_size in 16 128 512; do
     # VAE
     for x0 in 0 10000; do
         ./train.py  \
-            --save_model_path exp \
             --test \
             --dataset ${dataset}  \
             --embedding_dropout 0.5 \
@@ -50,7 +48,6 @@ for latent_size in 16 128 512; do
 
     # AE
     ./train.py  \
-        --save_model_path exp \
         --test \
         --dataset ${dataset}  \
         --embedding_dropout 0.5 \
@@ -70,7 +67,7 @@ done
 ## Testing 
 
 ```
-./test.py --max_sequence_length 100 --test_epochs 1 --seed 1 -maxsl 20 --batch_size 20 --temperature 1.0 --test --split test  bin/ptb_2019-Nov-26_18-45-49_mim
+./test.py --max_sequence_length 100 --test_epochs 1 --seed 1 -maxsl 20 --batch_size 20 --temperature 1.0 --test --split test data/torch-generated/exp/<EXPERIMENT PATH>
 ```
 
 # Citation
