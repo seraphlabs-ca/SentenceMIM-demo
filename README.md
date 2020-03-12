@@ -4,6 +4,17 @@ This repo contains code to reproduce some of the results presented in the paper 
 
 Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
+## Installation
+
+All data is included in repo.
+You can install the required packages with the command below.
+NOTE: Virtual env is highly recommended to prevent corruption of your personal pip environment.
+
+```
+# Use at your own risk - virtual env is highly recommended
+pip install requirements.txt 
+```
+
 # Experiments
 
 Below are the commands to train and test MIM, VAE, and AE with shared architecture over Penn Treebank (PTB) dataset.
