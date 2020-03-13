@@ -8,7 +8,8 @@ Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
 All data is included in repo.
 You can install the required packages with the command below.
-NOTE: Virtual env is highly recommended to prevent corruption of your personal pip environment.
+
+**NOTE:** Virtual env is highly recommended to prevent corruption of your personal pip environment.
 
 ```
 # Use at your own risk - virtual env is highly recommended
