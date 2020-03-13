@@ -29,7 +29,6 @@ Below is summary of the results, and the corresponding commands to train and tes
 
 ## Results Summary
 
-Below is a summary of the results.
 
 ### Perplexity
 
