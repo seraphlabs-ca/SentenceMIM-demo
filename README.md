@@ -33,6 +33,8 @@ Below is a summary of the results.
 
 ### Perplexity
 
+NLL/PPL results are an upper bound, computed with MELBO for MIM, and ELBO for VAE.
+
 | Model      | PPL    | NLL    | BLEU   | Parameters |
 |------------|--------|--------|--------|-----------:|
 | AE (16)    |        |        | 0.2916 |        11M |
