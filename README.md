@@ -9,6 +9,15 @@ Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 All data is included in repo.
 You can install the required packages with the command below.
 
+```
+# requirements.txt
+nltk==3.3
+matplotlib==2.2.2
+numpy==1.16.4
+tqdm==4.28.1
+torch==1.4.0
+```
+
 **NOTE:** Virtual env is highly recommended to prevent corruption of your personal pip environment.
 
 ```
