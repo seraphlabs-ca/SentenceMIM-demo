@@ -314,7 +314,7 @@ NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
     data/torch-generated/exp/*
 ```
 
-All results will be store in the corresponding results path in ```best-test-1-marginal0-mcmc0.txt``` (name corresponds the command line arguments used with ```test.py``` script).
+All results will be stored in the corresponding results path inside a text file ```best-test-1-marginal0-mcmc0.txt``` (name corresponds the command line arguments used with ```test.py``` script).
 
 # Citation
 
