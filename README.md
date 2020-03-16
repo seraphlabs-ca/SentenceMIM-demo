@@ -43,7 +43,7 @@ Below is summary of the results, and the corresponding commands to train and tes
 
 ## Results Summary
 
-In what follows we summarize the results this code produce.
+In what follows we summarize the results this code can produce.
 For qualitative results we show best performing MIM model (i.e., sMIM (512) ),
 and compare it to best performing VAE (i.e., sVAE (16) ), and to
 VAE with same dimensionality, sVAE (512) which suffers from collapsed posterior.
