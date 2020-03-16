@@ -16,6 +16,10 @@ You can install the required packages with the command below.
 pip install requirements.txt 
 ```
 
+In addition we included the python package ```npeet``` for convenience.
+The package was downloaded from <https://github.com/gregversteeg/NPEET>
+(commit d562b77e48430fc694b0fb9ff28dc5311dc64282), and has MIT license.
+
 # Experiments
 
 Below is summary of the results, and the corresponding commands to train and test MIM, VAE, and AE (with similar architecture) over Penn Treebank (PTB) dataset.
