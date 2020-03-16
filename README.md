@@ -1,3 +1,9 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/200302645/language-modelling-on-penn-treebank-word)](https://paperswithcode.com/sota/language-modelling-on-penn-treebank-word?p=200302645)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/200302645/language-modelling-on-yahoo-answers)](https://paperswithcode.com/sota/language-modelling-on-yahoo-answers?p=200302645)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/200302645/question-answering-on-yahoocqa)](https://paperswithcode.com/sota/question-answering-on-yahoocqa?p=200302645)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/200302645/language-modelling-on-yelp15)](https://paperswithcode.com/sota/language-modelling-on-yelp15?p=200302645)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/200302645/language-modelling-on-wikitext-103)](https://paperswithcode.com/sota/language-modelling-on-wikitext-103?p=200302645)
+
 # SentenceMIM-demo
 
 This repo contains code to reproduce some of the results presented in the paper ["SentenceMIM: A Latent Variable Language Model"](https://arxiv.org/abs/2003.02645).
