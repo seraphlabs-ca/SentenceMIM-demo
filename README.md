@@ -30,6 +30,10 @@ Below is summary of the results, and the corresponding commands to train and tes
 
 ## Results Summary
 
+In what follows we summarize the results this code produce.
+For qualitative results we show best performing MIM model (i.e., sMIM (512) ),
+and compare it to best performing VAE (i.e., sVAE (16) ), and to
+VAE with same dimensionality, sVAE (512) which suffers from collapsed posterior.
 
 ### Perplexity
 
@@ -51,6 +55,11 @@ NLL/PPL results are an upper bound, computed with MELBO for MIM, and ELBO for VA
 ### Reconstruction 
 
 Below are reconstruction results for best performing models.
+
+* DATA - observation (i.e., input sentence)
+* MEAN RECON - reconstruction given the mean of the posterior q(z|x)
+* Z RECON - reconstruction given sample z from the posterior z ~ q(z|x)
+* Z PERT - reconstruction given sample z from a posterior with x10 larger variance
 
 **sMIM (512)**
 ```
@@ -77,6 +86,19 @@ DATA: <sos> sony itself declines to comment
 MEAN RECON: hyundai and other cities have been asked to exclude <eos>
 Z RECON: brian <eos>
 Z PERT: mcdonnell douglas turner turner turner pictures mother singer a genetic <unk> gene ogilvy former sanford <unk> turner pictures woman writer turner broadcasting university gene turner turner pictures <unk> <unk> university in genetic damage but her ted district was buddy and jazz <unk> in cells never complex kate judge o'kicki and certified mother <unk> turner pictures <unk> <unk> st . louis park <eos>
+```
+
+**sVAE (512)**
+```
+DATA: <sos> the system is the problem not an individual member
+MEAN RECON: federal bank authority authority home loans to wedge about n n states at least n n increases <eos>
+Z RECON: she ' ll remember her chaos he sees by a season that means <unk> and her sister in looking to dress video procedures to lift more confidence in the same time <eos>
+Z PERT: initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated initiated ...
+
+DATA: <sos> sony itself declines to comment
+MEAN RECON: miniscribe said there are that there have been trimming <eos>
+Z RECON: last week the 13th of israel gives the complaints for $ n million or n cents a share immediately <eos>
+Z PERT: arabia arabia parity layer adjustable adjustable repeated repeated adjustable devise forum adjustable devise forum devise forum traffickers donuts forum devise screens repeated computerized repeated repeated repeated repeated screens repeated repeated screens screens screens repeated screens screens screens quina teachers screens screens repeated screens screens ...
 ```
 
 ### Interpolation 
@@ -138,26 +160,63 @@ the most form spacecraft reading in advertising of prime minister mr . watson <u
 [ <sos> sony itself declines to comment ]
 ```
 
+**sVAE (512)**
+```
+[ <sos> the system is the problem not an individual member ]
+
+the five cardiovascular clearly sure her new line was unanimously as a signal that left money out after section n to join morrison <unk> rebel out at a hearing committee and chicago utility <eos>
+
+at the same time the merksamer office ' s <unk> crisis <eos>
+
+in the week the humans gives corporate cultural personnel even vicious and even acquisitions <eos>
+
+<unk> economists like a source of his goodman and company showing about more than the <unk> <unk> <eos>
+
+some atmospheric companies are urging products to meet with the <unk> image at the <unk> or inflated <eos>
+
+as of the <unk> to become the <unk> mengistu mr . honecker said yesterday should be <unk> about the central bank <eos>
+
+to tackle for mr . kasparov ' s patents tied to meet in sci tv said it would make his offer to pursue major business information is <unk> by a <unk> of cash <eos>
+
+in the year-ago period goodyear added n n to n n <eos>
+
+elizabeth r . <unk> and house <eos>
+
+herbert hunt who follows the stock price <eos>
+
+[ <sos> sony itself declines to comment ]
+```
+
 ### Sampling 
 
 Below are sampling results for best performing models.
 
 **sMIM (512)**
 ```
-SAMP: the report suggested no longer fraud was <unk> but they ' re liable to see a full compromise of confidence in north america <eos>
+SAMP: he expects meaningful retail margins for <unk> in terms of the previous obstacle about n to $ n million or customer world said reebok as <unk> corp . cleveland <eos>
+                                                                                                                          
+SAMP: <unk> old i ' ve made the computer maker to <unk> a higher complex settlement of arbitragers that were one problem <eos>
 
-SAMP: the investor set aside tuesday ' s <unk> program trading as a plant who had moved to make n million in the past several months <eos>
-
-SAMP: first meridian the government can be <unk> out of a time in australia who is now to emerge his own affidavit <eos>
+SAMP: our companies however cray computer financial institutions would n't discuss that the bank ' s proposed spending paid but when a character to one company with her <unk> inc . said
+ <eos>                      
 ```
 
 **sVAE (16)**
 ```
-SAMP: the report suggested no longer fraud was <unk> but they ' re liable to see a full compromise of confidence in north america <eos>
+SAMP: at the strip and explain expectations will be discussed as n hours of production in the next day <eos>
 
-SAMP: the investor set aside tuesday ' s <unk> program trading as a plant who had moved to make n million in the past several months <eos>
+SAMP: most of us agreed to recognize the techniques for the american market <eos>
 
-SAMP: first meridian the government can be <unk> out of a time in australia who is now to emerge his own affidavit <eos>
+SAMP: transportation serves and other minority interests have been eliminated in the absence fashion indeed the wage for greater doors <eos>
+```
+
+**sVAE (512)**
+```
+SAMP: most of recent problems still kept that most important contribution will follow unscrupulous when the sale of the premium will be because they have lately their money <eos>
+
+SAMP: but they ca n't save the value of their drugs <eos>
+
+SAMP: ford jaguar ' s net income fell n n to $ n million $ n million or $ n a share from $ n million <eos>
 ```
 
 
@@ -233,6 +292,7 @@ NLL is upper bounded using MELBO for MIM, and ELBO for VAE.
     --seed 1 \
     --max_sample_length 20 \
     --batch_size 20 \
+    --temperature 0.2 \
     --test \
     --split test \
     --test_bleu \
