@@ -9,6 +9,7 @@
 This repo contains code to reproduce some of the results presented in the paper ["SentenceMIM: A Latent Variable Language Model"](https://arxiv.org/abs/2003.02645).
 
 Code is based on: <https://github.com/timbmg/Sentence-VAE>.
+We included source code from ```npeet``` package for convenience (<https://github.com/gregversteeg/NPEET>).
 
 ## Installation
 
@@ -18,6 +19,7 @@ git clone https://github.com/seraphlabs-ca/SentenceMIM-demo.git
 ```
 
 Data is NOT included in repo (see below for downloading instructions).
+
 You can install the required packages with the command below.
 
 ```
@@ -36,10 +38,6 @@ torch==1.4.0
 pip install requirements.txt 
 ```
 
-Please install ```npeet``` manually:
-```
-git clone https://github.com/gregversteeg/NPEET.git
-```
 
 # Experiments
 
