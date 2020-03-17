@@ -50,7 +50,7 @@ Below is summary of the results, and the corresponding commands to train and tes
 |              |   Train   | Valid. |  Test | Vocab. |     #w (max)     |
 | PTB          |    3370   |  3761  | 42068 |  10000 | 21 +/- 10 (82) |
 
-**Penn Treebank (PTB) Dataset:** Please download word-level data from <https://catalog.ldc.upenn.edu/LDC99T42> (license can be found in the following link [LDC User Agreement for Non-Members](https://catalog.ldc.upenn.edu/license/LDC%20User%20Agreement%20for%20Non-Members.pdf)).
+**Penn Treebank (PTB) Dataset:** Please download word-level data from <https://catalog.ldc.upenn.edu/LDC99T42>.
 Extract the files to ```data/datasets/ptb/```. Expected files:
 ```
 README
