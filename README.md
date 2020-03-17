@@ -31,9 +31,12 @@ torch==1.4.0
 pip install requirements.txt 
 ```
 
-In addition we included the python package ```npeet``` for convenience.
-The package was downloaded from <https://github.com/gregversteeg/NPEET>
-(commit d562b77e48430fc694b0fb9ff28dc5311dc64282), and has MIT license.
+Please clone the repo recursively, since we rely in a submodule ```npeet```
+```
+git clone --recursive https://github.com/seraphlabs-ca/SentenceMIM-demo.git
+cd SentenceMIM-demo
+ln -s NPEET/npeet ./npeet
+```
 
 # Experiments
 
