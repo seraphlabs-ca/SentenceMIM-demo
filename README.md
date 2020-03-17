@@ -29,6 +29,8 @@ matplotlib==2.2.2
 numpy==1.16.4
 tqdm==4.28.1
 torch==1.4.0
+scipy==1.3.2
+sklearn==0.0
 ```
 
 **NOTE:** Virtual env is highly recommended to prevent corruption of your personal pip environment.
