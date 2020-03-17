@@ -71,6 +71,8 @@ NLL/PPL results are an upper bound, computed with MELBO for MIM, and ELBO for VA
 | sMIM (128) | 28.58  | 76.14  | 0.5542 |        11M |
 | sMIM (512) | **19.02**  | **66.9**   | **0.6226** |        12M |
 
+AE is an auto-encoder with similar architecture (i.e., latent code z is taken to be mean of posterior q(z|x)). We present BLEU results only as it is not a PDF estimator.
+
 
 ### Reconstruction 
 
