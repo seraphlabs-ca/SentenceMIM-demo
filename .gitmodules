@@ -1,0 +1,8 @@
+[submodule "NPEET"]
+	path = NPEET
+	url = https://github.com/gregversteeg/NPEET
+	branch = master
+[submodule "npeet"]
+	path = npeet
+	url = https://github.com/gregversteeg/NPEET
+	branch = master
