@@ -12,6 +12,11 @@ Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
 ## Installation
 
+
+```
+git clone https://github.com/seraphlabs-ca/SentenceMIM-demo.git
+```
+
 Data is NOT included in repo (see below for downloading instructions).
 You can install the required packages with the command below.
 
@@ -31,11 +36,9 @@ torch==1.4.0
 pip install requirements.txt 
 ```
 
-Please clone the repo recursively, since we rely in a submodule ```npeet```
+Please install ```npeet``` manually:
 ```
-git clone --recursive https://github.com/seraphlabs-ca/SentenceMIM-demo.git
-cd SentenceMIM-demo
-ln -s NPEET/npeet ./npeet
+git clone https://github.com/gregversteeg/NPEET.git
 ```
 
 # Experiments
