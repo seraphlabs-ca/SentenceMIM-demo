@@ -12,7 +12,7 @@ Code is based on: <https://github.com/timbmg/Sentence-VAE>.
 
 ## Installation
 
-All data is included in repo.
+Data is NOT included in repo (see below for downloading instructions).
 You can install the required packages with the command below.
 
 ```
