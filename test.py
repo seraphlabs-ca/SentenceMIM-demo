@@ -189,7 +189,10 @@ def main(checkpoint_fname, args):
             # marginal entropy
             CE_q_p_z = (-log_p_z)
             H_q_z_given_x = (-log_q_z_given_x)
+            # For MIM: KL_q_p = -log N
+            # For VAE: KL_q_p = KL divergence between q(z|x) and p(z)
             KL_q_p = CE_q_p_z - H_q_z_given_x
+            # This expression computes ELBO for VAE and MELBO for MIM
             H_p_x = H_p_x_given_z + KL_q_p
 
             return dict(
