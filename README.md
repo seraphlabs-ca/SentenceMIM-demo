@@ -40,6 +40,10 @@ sklearn==0.0
 pip install requirements.txt 
 ```
 
+## TODO
+
+* Extend code to train on arbitrary text files
+* Add pre-trained models
 
 # Experiments
 
